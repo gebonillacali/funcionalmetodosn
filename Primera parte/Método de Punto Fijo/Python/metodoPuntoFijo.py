@@ -15,7 +15,7 @@ def metodoPuntoFijo( x0, e1, e2, yi ):
    return salida;
 
 def testFuncion(x, yi):
-   return (x**3 - yi) / 4;
+   return yi / ((x**2) -4);
 
 print(metodoPuntoFijo(0.05, 0.005,0.005, 0));
 
