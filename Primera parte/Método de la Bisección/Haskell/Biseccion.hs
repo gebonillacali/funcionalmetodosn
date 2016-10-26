@@ -1,6 +1,6 @@
 --Implementación método de Bisección
 metodoBiseccion :: (Fractional a, Eq a, Ord a, Show a)  => a -> a -> a -> a -> a -> [a]
-metodoBiseccion a b e1 e2 yi = if (checkError a b (e1/100)) || (abs (testFuncion c yi)) <= (e2/100) then c:[] else if ((testFuncion a yi) * (testFuncion c yi)) > 0 then c:[] ++ (metodoBiseccion a c e1 e2 yi) else c:[] ++ (metodoBiseccion c b e1 e2 yi) where c = (calcularMedia a b)
+metodoBiseccion a b e1 e2 yi = if (checkError a b (e1/100)) || (abs (testFuncion c yi)) <= (e2/100) then c:[] else if ((testFuncion a yi) * (testFuncion c yi)) < 0 then c:[] ++ (metodoBiseccion a c e1 e2 yi) else c:[] ++ (metodoBiseccion c b e1 e2 yi) where c = (calcularMedia a b)
 
 --Calcula la media por definición (a+b)/2
 calcularMedia :: (Fractional a) => a -> a -> a
