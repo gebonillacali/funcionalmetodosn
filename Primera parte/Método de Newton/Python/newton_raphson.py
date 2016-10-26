@@ -4,10 +4,13 @@ def metodoNewtonRaphson( x0, e1, e2, yi ):
    while (True):
       x = x0 - (testFuncion (x0, yi) / testFuncionPrima(x0));
       print (x);
-      if (abs(x-x0)<e1):
+      salida.append(x);
+      if (abs(testFuncion(x,yi))<(e2/100)):
+         break;
+      if (abs(x-x0)<(e1/100)):
          break;
       x0 = x;
-   salida.append(x);
+   
    return salida;
 
 def testFuncion(x, yi):
@@ -16,4 +19,4 @@ def testFuncion(x, yi):
 def testFuncionPrima(x):
    return 3*(x**2) - 4;
 
-print (metodoNewtonRaphson(-1,0.0005,0.0005,0))
+print (metodoNewtonRaphson(0.5,0.05,0.05,0))
