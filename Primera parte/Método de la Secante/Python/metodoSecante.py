@@ -1,8 +1,8 @@
 def metodoSecante( x0, e1, e2, yi ):
    "Implementa el método de la Secante"
    salida = [];
-   while (True):
-      x1 = x0 - (testFuncion (x0, yi) / testFuncionPrima(x0));
+   x1 = x0 - (testFuncion (x0, yi) / testFuncionPrima(x0));
+   while (True):      
       x = x1 - (((x1-x0)/(testFuncion(x1,yi)-testFuncion(x0,yi))) * testFuncion(x1,yi));
       salida.append(x);
       if (abs(testFuncion(x,yi))<(e2/100)):
